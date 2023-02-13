@@ -6,7 +6,7 @@ public class User {
     private final String email;
 
     public User() {
-        this("", "");
+        this(null, null);
     }
 
     public User(String login, String email) {
@@ -15,7 +15,7 @@ public class User {
     }
 
     public void checkEmail(String email) {
-        if (!email.contains("@") || !email.contains(".")) {
+        if (!email.contains("@") || !email.contains(".") || email.endsWith(".")) {
             throw new InvalidEmailAddressException("Установлен некорректный e-mail адрес");
         }
     }

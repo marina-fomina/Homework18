@@ -11,15 +11,17 @@ public class UserTest {
     @Test
     @DisplayName("When 'Marina, 123@gmail.com' passed then User with two parameters is created")
     public void createUserWithParameters() {
-        User actual = new User("Marina", "123@gmail.com");
-        assertNotNull(actual, "User with two parameters should be created");
+        User user = new User("Marina", "123@gmail.com");
+        assertNotNull(user.getLogin(), "User with two parameters should be created");
+        assertNotNull(user.getEmail(), "User with two parameters should be created");
     }
 
     @Test
     @DisplayName("When nothing is passed then User without parameters is created")
     public void createUserWithoutParameters() {
         User actual = new User();
-        assertNotNull(actual, "User without parameters should be created");
+        assertNull(actual.getLogin(), "User without parameters should be created");
+        assertNull(actual.getEmail(), "User without parameters should be created");
     }
 
     @Test
