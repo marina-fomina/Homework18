@@ -15,7 +15,10 @@ public class User {
     }
 
     public void checkEmail(String email) {
-        if (!email.contains("@") || !email.contains(".") || email.endsWith(".")) {
+        if (!email.contains("@") ||
+                !email.contains(".") ||
+                email.endsWith(".") ||
+                email.indexOf('@', '@') > email.indexOf('.')) {
             throw new InvalidEmailAddressException("Установлен некорректный e-mail адрес");
         }
     }
